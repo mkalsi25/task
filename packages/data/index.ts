@@ -4,7 +4,7 @@ export type Tool = {
 };
 
 export const availableTool: Tool[] = [
-  { title: "Label", type: "label" },
+  { title: "Label ", type: "label" },
   { title: "Text Field", type: "text" },
   { title: "Email", type: "email" },
   { title: "Url", type: "url" },

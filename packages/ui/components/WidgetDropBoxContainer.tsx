@@ -1,3 +1,3 @@
 export function WidgetDropBoxContainer({ children }: { children: any }) {
-  return <div className="w-4/5 p-4"> {children}</div>;
+  return <div className="w-full lg:w-[65%] p-4"> {children}</div>;
 }

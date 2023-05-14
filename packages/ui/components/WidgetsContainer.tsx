@@ -1,3 +1,3 @@
 export default function WidgetsContainer({ children }: { children: any }) {
-  return <div className="w-1/5 p-4">{children}</div>;
+  return <div className="w-full lg:w-[35%] p-4">{children}</div>;
 }

@@ -32,9 +32,9 @@ export function WidgetDropBox({
         onDragLeave={onDragLeave}
         className={`${
           className ? className : ""
-        } transition duration-200 ease-in-out  w-full p-2 min-h-[24rem] inline-flex flex-col items-center rounded-xl  ${
+        } transition duration-200 ease-in-out border  w-full p-2 min-h-[24rem] inline-flex flex-col items-center rounded-xl  ${
           isActiveDrop
-            ? "outline-dashed outline-stone-600 outline-2 outline-offset-4 bg-white/70"
+            ? "outline-dashed outline-stone-600 outline-2 outline-offset-8 bg-white/70"
             : "bg-white"
         }`}
       >
@@ -50,7 +50,7 @@ export function WidgetDropBox({
                 key={tool.type}
                 id={tool.type}
                 value={tool}
-                className="pl-4 pr-2 bg-stone-100 rounded-xl flex items-center justify-between"
+                className="pl-4 pr-2 overflow-hidden bg-stone-100 rounded-xl flex items-center justify-between"
               >
                 <div className="inline-flex space-x-3 items-center cursor-grab h-12 w-full">
                   <svg
@@ -134,9 +134,9 @@ export function WidgetDropBox({
       onDragLeave={onDragLeave}
       className={`${
         className ? className : ""
-      } transition duration-200 ease-in-out w-full h-96 inline-flex flex-col justify-center items-center rounded-xl  ${
+      } transition duration-200 ease-in-out w-full border h-96 inline-flex flex-col justify-center items-center rounded-xl  ${
         isActiveDrop
-          ? "outline-dashed outline-stone-600 outline-4 outline-offset-4 bg-white/70"
+          ? "outline-dashed outline-stone-600 outline-2 outline-offset-8 bg-white/70"
           : "bg-white"
       }`}
     >

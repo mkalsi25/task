@@ -18,4 +18,10 @@ export const availableTool: Tool[] = [
     type: "checkbox",
   },
   { title: "Divider", type: "divider" },
+  { title: "Hero Image", type: "heroImage" },
+  { title: "Page", type: "page" },
+  { title: "Heading", type: "heading" },
+  { title: "Link", type: "link" },
+  { title: "Video", type: "video" },
+  { title: "Tables", type: "tables" },
 ];

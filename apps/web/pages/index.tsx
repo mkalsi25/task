@@ -6,11 +6,12 @@ import {
   Container,
 } from "ui/components";
 import WidgetsContainer from "ui/components/WidgetsContainer";
-import { availableTool } from "data";
+import { availableTool, Tool } from "data";
+import Head from "next/head";
 export default function HomePage() {
-  const [widget, setWidget] = useState<any[]>([]);
+  const [widget, setWidget] = useState<Tool[]>([]);
   const [isActiveDrop, setIsActiveDrop] = useState(false);
-  const handleOnDrag = (e: DragEvent, tool: any) => {
+  const handleOnDrag = (e: DragEvent, tool: Tool) => {
     try {
       setIsActiveDrop(true);
       const tools = JSON.stringify(tool);
@@ -26,7 +27,7 @@ export default function HomePage() {
         setIsActiveDrop(false);
         throw new Error("No Tool Dropped!");
       }
-      const tool = JSON.parse(toolString);
+      const tool = JSON.parse(toolString) satisfies Tool;
       setWidget([...widget, tool]);
       setIsActiveDrop(false);
     } catch (error) {
@@ -40,6 +41,9 @@ export default function HomePage() {
 
   return (
     <Container>
+      <Head>
+        <title>Drag `N` Dop</title>
+      </Head>
       <WidgetDropBoxContainer>
         <WidgetDropBox
           onDrop={(e: any) => handleOnDrop(e)}

@@ -7,14 +7,14 @@ export const availableTool: Tool[] = [
   { title: "Label", type: "label" },
   { title: "Text Field", type: "text" },
   { title: "Email", type: "email" },
-  { title: "Url", type: "url" },
+  { title: "URL", type: "url" },
   {
     title: "Text Area",
     type: "textarea",
   },
-  { title: "Radio Button", type: "radio" },
+  { title: "Radio ", type: "radio" },
   {
-    title: "Check Box",
+    title: "Checkbox",
     type: "checkbox",
   },
   { title: "Divider", type: "divider" },

@@ -1,5 +1,5 @@
 import { Reorder, AnimatePresence } from "framer-motion";
-
+import { Tool } from "data";
 export function WidgetDropBox({
   onDrop,
   onDragOver,
@@ -17,7 +17,7 @@ export function WidgetDropBox({
   onDragEnterCapture?: any;
   onDragLeave?: any;
   isActiveDrop: boolean;
-  widget: any[];
+  widget: Tool[];
   className?: string;
   setWidgets?: any;
 }) {
@@ -32,7 +32,7 @@ export function WidgetDropBox({
         onDragLeave={onDragLeave}
         className={`${
           className ? className : ""
-        } transition duration-200 ease-in-out border  w-full p-2 min-h-[24rem] inline-flex flex-col items-center rounded-xl  ${
+        } transition duration-200 ease-in-out border  w-full p-2 min-h-full inline-flex flex-col items-center rounded-xl  ${
           isActiveDrop
             ? "outline-dashed outline-stone-600 outline-2 outline-offset-8 bg-white/70"
             : "bg-white"
@@ -42,10 +42,10 @@ export function WidgetDropBox({
           className="w-full flex-col space-y-2"
           axis="y"
           values={widget}
-          onReorder={(ordererd: any[]) => setWidgets(ordererd)}
+          onReorder={(ordererd: Tool[]) => setWidgets(ordererd)}
         >
           <AnimatePresence>
-            {widget.map((tool: any, key: number) => (
+            {widget.map((tool: Tool, key: number) => (
               <Reorder.Item
                 key={tool.type}
                 id={tool.type}
@@ -78,7 +78,7 @@ export function WidgetDropBox({
                     onClick={() => {
                       const id = key;
                       const filterList = widget.filter(
-                        (_id: any, key: number) => key !== id
+                        (_id: Tool, key: number) => key !== id
                       );
                       setWidgets(filterList);
                     }}
@@ -134,7 +134,7 @@ export function WidgetDropBox({
       onDragLeave={onDragLeave}
       className={`${
         className ? className : ""
-      } transition duration-200 ease-in-out w-full border h-96 inline-flex flex-col justify-center items-center rounded-xl  ${
+      } transition duration-200 ease-in-out w-full border h-full inline-flex flex-col justify-center items-center rounded-xl  ${
         isActiveDrop
           ? "outline-dashed outline-stone-600 outline-2 outline-offset-8 bg-white/70"
           : "bg-white"

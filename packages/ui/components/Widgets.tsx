@@ -1,15 +1,17 @@
+import { Tool } from "data";
+
 export function Widgets({
   widgets,
   onDragStart,
   onDragLeave,
 }: {
-  widgets: any[];
+  widgets: Tool[];
   onDragStart: any;
   onDragLeave: any;
 }) {
   return (
     <div className="grid grid-cols-2 gap-4">
-      {widgets.map((tool: any, key: number) => (
+      {widgets.map((tool: Tool, key: number) => (
         <div
           draggable
           key={key}
